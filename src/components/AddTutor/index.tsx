@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-
+import {Div1} from "@/ui/styles/Components/AddTutor/styles";
 
 export default function AddTutor(){
 return(
-    <div>
+    <Div1>
         <h1>Cadastrar Novo Tutor</h1>
 
         <form action="">
@@ -24,7 +24,7 @@ return(
 
             <h2>Dados para contato:</h2>
 
-            <label htmlFor="cep-tutor">CPF:</label>
+            <label htmlFor="cep-tutor">CEP:</label>
             <input type="number" id="cep-tutor" name="cep-tutor"/>
 
             <label htmlFor="address-tutor">Endereço:</label>
@@ -50,7 +50,7 @@ return(
             
             <button type="submit"> Cadastrar tutor</button>
         </form>
-    </div>
+    </Div1>
 )
     
 }
