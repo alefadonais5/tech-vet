@@ -13,14 +13,14 @@ export const PrimaryButtonStyle = styled.button`
 
 export const SecondaryButtonStyle = styled.button`
   display: flex;
-  width: fit-content;
+  width: auto;
   margin: 1rem auto;
   height: 2.5rem;
   border: none;
   background-color: ${({ theme }) => theme.colors.backgrounds.secondary};
   border-radius: 0.5rem;
   color: ${({ theme }) => theme.colors.text.secondary};
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   font-weight: 400;
   font-size: ${({ theme }) => theme.sizes.font.primary};
   text-align: center;

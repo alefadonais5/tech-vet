@@ -4,6 +4,7 @@ import {
   Container,
   Form,
   FormGroup,
+  FormGroupButton,
   Heading,
   Input,
   Label,
@@ -165,13 +166,16 @@ export function Vetconsultation({ onCancel }: VetconsultationProps) {
             <option value="high">Alta</option>
           </Select>
         </FormGroup>
-        <SecondaryButtonStyle type="submit" onClick={handleSubmit}>
-          Agendar Consulta
-        </SecondaryButtonStyle>
+        <FormGroupButton>
 
-        <button type="button" onClick={onCancel}>
-          Cancelar
-        </button>
+          <SecondaryButtonStyle type="submit" onClick={handleSubmit}>
+            Agendar Consulta
+          </SecondaryButtonStyle>
+
+          {/* <Cancelar onClick={onCancel}>
+            Cancelar
+          </Cancelar> */}
+        </FormGroupButton>
       </Form>
       {alertMessage && <Alert isError={isError}>{alertMessage}</Alert>}
     </Container>

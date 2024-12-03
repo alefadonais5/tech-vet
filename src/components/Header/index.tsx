@@ -5,6 +5,7 @@ import {
   LeftGroup,
   RightGroup,
   StyledInput,
+  TitleName,
 } from "@/ui/styles/Components/Header/styles";
 import logo from "@/ui/assets/images/Logo 50x50.svg";
 import Image from "next/image";
@@ -34,11 +35,11 @@ export function Header() {
           <Icons onClick={toggleNavbar}>
             <MenuIcon />
           </Icons>
-
+          <TitleName onClick={() => router.push("/")}>TechVet</TitleName>
           <Image alt="logo" src={logo} onClick={() => router.push("/")} />
         </LeftGroup>
 
-        <StyledInput type="text" name="search" />
+        {/* <StyledInput type="text" name="search" /> */}
 
         <RightGroup>
           <Icons onClick={toggleNotification}>

@@ -1,17 +1,19 @@
 import Image from "next/image";
 import styled from "styled-components";
 
-export const StyledInputContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
 export const StyledInput = styled.input`
+  align-items: center;
   border: none;
   width: 34rem;
   height: 1.875rem;
   outline: none;
   border-radius: 1.563rem;
+`;
+
+export const TitleName = styled.h1`
+  color: ${({ theme }) => theme.colors.text.secondary};
+  font-size: ${({ theme }) => theme.sizes.font.terciary};
+  cursor: pointer;
 `;
 
 export const IconSearch = styled(Image)`
@@ -35,7 +37,7 @@ export const LeftGroup = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 3.25rem;
+  gap: 2.5rem;
 
   img {
     cursor: pointer;

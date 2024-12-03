@@ -52,6 +52,7 @@ export default function VetQueries() {
           <SecundaryButton onClick={handleClick}>
             Criar Consulta
           </SecundaryButton>
+          
           <MainContent>
             <Div>
               {consultationsVet?.map((consultations, index) => (

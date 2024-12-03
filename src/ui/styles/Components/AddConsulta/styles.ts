@@ -116,3 +116,22 @@ export const Alert = styled.div<{ isError: boolean }>`
   font-size: ${({ theme }) => theme.sizes.font.primary};
   font-weight: 700;
 `;
+
+export const FormGroupButton = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: -5rem; /* Espaçamento entre os botões */
+  margin-top: 1rem; /* Espaçamento superior, opcional */
+`;
+// export const Cancelar = styled.button`
+//   width: auto;
+//   height: 2.5rem;
+//   border: 1px solid ${({ theme }) => theme.colors.backgrounds.secondary};;
+//   border-radius: 0.5rem;
+//   padding: 0.5rem 1rem;
+//   font-weight: 400;
+//   font-size: ${({ theme }) => theme.sizes.font.primary};
+//   text-align: center;
+//   justify-content: center;
+//   align-items: center;
+// `;
