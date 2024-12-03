@@ -1,6 +1,12 @@
+import { Header } from "@/components/Header";
 import React, { useEffect, useState } from "react";
-import { Header } from "@/components/Header/index";
+
 
 export default function TutorVet(){
 
+    return(
+        <Header />
+    )
+
 }
+

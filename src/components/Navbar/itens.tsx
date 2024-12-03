@@ -1,8 +1,11 @@
 import ForecastIcon from "@/ui/assets/icons/Forecast";
 import HospitalIcon from "@/ui/assets/icons/Hospital";
 import LogoutIcon from "@/ui/assets/icons/Logout ";
+import PersonIcon from "@/ui/assets/icons/Person";
 import ServiceIcon from "@/ui/assets/icons/Service";
 import StockIcon from "@/ui/assets/icons/Stock";
+
+
 
 export const itens = [
   {
@@ -13,18 +16,24 @@ export const itens = [
   },
   {
     id: "2",
+    icon: <PersonIcon />,
+    title: "Tutores",
+    path: "/tutor",
+  },
+  {
+    id: "3",
     icon: <HospitalIcon />,
     title: "Internamentos",
     path: "/consultas",
   },
   {
-    id: "3",
+    id: "4",
     icon: <StockIcon />,
     title: "Estoque",
     path: "/consultas",
   },
   {
-    id: "4",
+    id: "5",
     icon: <ForecastIcon />,
     title: "Previsão de estoque",
     path: "/consultas",
