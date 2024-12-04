@@ -1,56 +1,56 @@
 import React, { useEffect, useState } from "react";
-import {Div1} from "@/ui/styles/Components/AddTutor/styles";
+import {ContainerAddTutor, TitleAddTutor, FormTutor, LabelTitle, InputTutor} from "@/ui/styles/Components/AddTutor/styles";
 
 export default function AddTutor(){
 return(
-    <Div1>
-        <h1>Cadastrar Novo Tutor</h1>
+    <ContainerAddTutor>
+        <TitleAddTutor>Cadastrar Novo Tutor</TitleAddTutor>
 
-        <form action="">
-            <label htmlFor="tutor-name">Nome:</label>
-            <input type="text" id="tutor-name" name="tutorName"/>
+        <FormTutor action="">
+            <LabelTitle htmlFor="tutor-name">Nome:</LabelTitle>
+            <InputTutor type="text" id="tutor-name" name="tutorName"/>
 
-            <label htmlFor="cpf-tutor">CPF:</label>
-            <input type="number" id="cpf-tutor" name="cpf-tutor"/>
+            <LabelTitle htmlFor="cpf-tutor">CPF:</LabelTitle>
+            <InputTutor type="number" id="cpf-tutor" name="cpf-tutor"/>
 
-            <label htmlFor="rg-tutor">RG:</label>
-            <input type="text" id="rg-tutor" name="rg-tutor"/>
+            <LabelTitle htmlFor="rg-tutor">RG:</LabelTitle>
+            <InputTutor type="text" id="rg-tutor" name="rg-tutor"/>
 
-            <label htmlFor="date-tutor">Data de Nascimento:</label>
-            <input type="date" id="date-tutor" name="date-tutor"/>
+            <LabelTitle htmlFor="date-tutor">Data de Nascimento:</LabelTitle>
+            <InputTutor type="date" id="date-tutor" name="date-tutor"/>
 
-            <label htmlFor="sexo-tutor">Sexo:</label>
-            <input type="text" id="sexo-tutor" name="sexo-tutor"/>
+            <LabelTitle htmlFor="sexo-tutor">Sexo:</LabelTitle>
+            <InputTutor type="text" id="sexo-tutor" name="sexo-tutor"/>
 
-            <h2>Dados para contato:</h2>
+            <TitleAddTutor>Dados para contato:</TitleAddTutor>
 
-            <label htmlFor="cep-tutor">CEP:</label>
-            <input type="number" id="cep-tutor" name="cep-tutor"/>
+            <LabelTitle htmlFor="cep-tutor">CEP:</LabelTitle>
+            <InputTutor type="number" id="cep-tutor" name="cep-tutor"/>
 
-            <label htmlFor="address-tutor">Endereço:</label>
-            <input type="text" id="address-tutor" name="address-tutor"/>
+            <LabelTitle htmlFor="address-tutor">Endereço:</LabelTitle>
+            <InputTutor type="text" id="address-tutor" name="address-tutor"/>
 
-            <label htmlFor="number-tutor">Número:</label>
-            <input type="number" id="number-tutor" name="number-tutor"/>
+            <LabelTitle htmlFor="number-tutor">Número:</LabelTitle>
+            <InputTutor type="number" id="number-tutor" name="number-tutor"/>
 
-            <label htmlFor="bairro-tutor">Bairro:</label>
-            <input type="text" id="bairro-tutor" name="bairro-tutor"/>
+            <LabelTitle htmlFor="bairro-tutor">Bairro:</LabelTitle>
+            <InputTutor type="text" id="bairro-tutor" name="bairro-tutor"/>
             
-            <label htmlFor="city-tutor">Cidade:</label>
-            <input type="text" id="city-tutor" name="city-tutor"/>
+            <LabelTitle htmlFor="city-tutor">Cidade:</LabelTitle>
+            <InputTutor type="text" id="city-tutor" name="city-tutor"/>
 
-            <label htmlFor="state-tutor">Estado:</label>
-            <input type="text" id="state-tutor" name="state-tutor"/>
+            <LabelTitle htmlFor="state-tutor">Estado:</LabelTitle>
+            <InputTutor type="text" id="state-tutor" name="state-tutor"/>
             
-            <label htmlFor="tel-tutor">Telefone:</label>
-            <input type="tel" id="tel-tutor" name="tel-tutor"/>
+            <LabelTitle htmlFor="tel-tutor">Telefone:</LabelTitle>
+            <InputTutor type="tel" id="tel-tutor" name="tel-tutor"/>
 
-            <label htmlFor="email-tutor">Email:</label>
-            <input type="text" id="email-tutor" name="email-tutor"/>
+            <LabelTitle htmlFor="email-tutor">Email:</LabelTitle>
+            <InputTutor type="text" id="email-tutor" name="email-tutor"/>
             
             <button type="submit"> Cadastrar tutor</button>
-        </form>
-    </Div1>
+        </FormTutor>
+    </ContainerAddTutor>
 )
     
 }

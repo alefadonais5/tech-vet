@@ -1,6 +1,21 @@
 import Image from "next/image";
 import styled from "styled-components";
 
+
+export const HeaderContainer = styled.div`
+  background-color: ${({ theme }) => theme.colors.backgrounds.primary};
+  width: 100%;
+  height: 4.75rem;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+`;
+
+
+
 export const StyledInput = styled.input`
   align-items: center;
   border: none;
@@ -19,18 +34,6 @@ export const TitleName = styled.h1`
 export const IconSearch = styled(Image)`
   width: 2rem;
   height: 2rem;
-`;
-
-export const HeaderContainer = styled.div`
-  background-color: ${({ theme }) => theme.colors.backgrounds.primary};
-  width: 100%;
-  height: 4.75rem;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 2rem;
-  align-items: center;
-  position: fixed;
-  z-index: 1;
 `;
 
 export const LeftGroup = styled.div`
