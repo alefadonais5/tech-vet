@@ -4,17 +4,18 @@ export const ContainerAddTutor = styled.div`
     width: 100%;
     max-width: 66.8125rem;
     height: auto;
-    margin: 3rem auto;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     background-color: ${({ theme }) => theme.colors.backgrounds.sextinary};
     border-radius: 1.25rem;
-    padding: 2rem;
-    gap: 2rem;
+    padding: 1.5rem;
+    gap: 1rem;
     box-shadow: 0px 4px 20px 0px
     rgba(${({ theme }) => theme.colors.backgrounds.sextinary}, 0.2);
+
 `;
 
 export const TitleAddTutor = styled.div`
@@ -33,8 +34,8 @@ export const FormTutor = styled.form`
     padding: 2rem;
     gap: 0.5rem;
     display: flex;
-    flex-direction: column;
-    align-items: normal;
+    align-items: flex-start; /* Alinha itens à esquerda dentro do formulário */
+    align-self: flex-start; /* Garante que o formulário não ocupe espaço extra */
 
 `;
 
