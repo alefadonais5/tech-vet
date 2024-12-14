@@ -7,15 +7,17 @@ import {
   InputTutor, 
   FormGroup, 
   FormGroupRow, 
-  InputItem 
+  InputItem, 
+  SubTitleTutor
 } from "@/ui/styles/Components/AddTutor/styles";
+import { SecundaryButton } from "../Elements/Buttons";
 
 export default function AddTutor() {
   return (
     <ContainerAddTutor>
       <TitleAddTutor>Cadastrar Novo Tutor</TitleAddTutor>
 
-      <FormTutor action="">
+      <FormTutor action="submit">
         <FormGroup>
           <FormGroupRow>
             <InputItem>
@@ -47,7 +49,7 @@ export default function AddTutor() {
           </FormGroupRow>
         </FormGroup>
 
-        <TitleAddTutor>Dados para contato:</TitleAddTutor>
+        <SubTitleTutor>Dados para contato:</SubTitleTutor>
 
         <FormGroup>
           <FormGroupRow>
@@ -95,7 +97,7 @@ export default function AddTutor() {
           </FormGroupRow>
         </FormGroup>
         
-        <button type="submit">Cadastrar tutor</button>
+        <SecundaryButton>Cadastrar tutor</SecundaryButton>
       </FormTutor>
     </ContainerAddTutor>
   );

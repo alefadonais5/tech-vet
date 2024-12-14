@@ -8,7 +8,7 @@ export const Title = styled.h2`
     justify-content: center;
     height: 100%;
     gap: 1.625rem;
-    padding: 1.625rem 0;
+    padding: 6rem 0;
 `
 
 export const MainContent = styled.main`

@@ -49,11 +49,10 @@ export default function VetQueries() {
         <Vetconsultation onCancel={handleCancel} />
       ) : (
         <div>
+          <MainContent>
           <SecundaryButton onClick={handleClick}>
             Criar Consulta
           </SecundaryButton>
-          
-          <MainContent>
             <Div>
               {consultationsVet?.map((consultations, index) => (
                 <Lista key={index}>
