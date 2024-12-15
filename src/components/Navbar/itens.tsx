@@ -1,3 +1,4 @@
+import ExamsIcon from "@/ui/assets/icons/Exams";
 import ForecastIcon from "@/ui/assets/icons/Forecast";
 import HospitalIcon from "@/ui/assets/icons/Hospital";
 import IconPaw from "@/ui/assets/icons/IconPaw";
@@ -28,19 +29,25 @@ export const itens = [
     path: "/animal",
   },
   {
-    id: "4",
+    id:"4",
+    icon: <ExamsIcon />,
+    title: "Exames",
+    path: "/exames",
+  },
+  {
+    id: "5",
     icon: <HospitalIcon />,
     title: "Internamentos",
     path: "/consultas",
   },
   {
-    id: "5",
+    id: "6",
     icon: <StockIcon />,
     title: "Estoque",
     path: "/consultas",
   },
   {
-    id: "6",
+    id: "7",
     icon: <ForecastIcon />,
     title: "Previsão de estoque",
     path: "/consultas",
