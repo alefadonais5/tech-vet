@@ -1,60 +1,90 @@
+import { ContainerAddAnimal, FormAnimal, FormGroup, FormGroupRow, InputAnimal, InputItem, LabelTitlePet, Select, TitleAddAnimal } from "@/ui/styles/Components/AddAnimal/styles";
 import React from "react";
+import { SecundaryButton } from "../Elements/Buttons";
 
 
 export default function AddAnimal(){
 
     return(
-        <div>
-            <h2>Cadastrar Animal</h2>
-            <form action="">
-                <label htmlFor="animal-name">Nome: </label>
-                <input type="text" id="animal-name" name="animal-name"/>
+        <ContainerAddAnimal>
+            <TitleAddAnimal>Cadastrar Animal</TitleAddAnimal>
+            <FormAnimal action="">
+                <FormGroup>
+                    <FormGroupRow>
+                        <InputItem>
+                            <LabelTitlePet htmlFor="animal-name">Nome: </LabelTitlePet>
+                            <InputAnimal type="text" id="animal-name" name="animal-name"/>
+                        </InputItem>
+                        
+                        <InputItem>
+                            <LabelTitlePet htmlFor="tutor-name">Tutor: </LabelTitlePet>
+                            <InputAnimal type="text" id="tutor-name" name="tutor-name"/>
+                        </InputItem>
 
-                <label htmlFor="tutor-name">Tutor: </label>
-                <input type="text" id="tutor-name" name="tutor-name"/>
+                        <InputItem>
+                            <LabelTitlePet htmlFor="species">Espécie: </LabelTitlePet>
+                            <InputAnimal type="text" id="species" name="species"/>
+                        </InputItem>
 
-                <label htmlFor="species">Espécie: </label>
-                <input type="text" id="species" name="species"/>
+                        <InputItem>
+                            <LabelTitlePet htmlFor="race">Raça: </LabelTitlePet>
+                            <InputAnimal type="text" id="race" name="race"/>
+                        </InputItem>
 
-                <label htmlFor="race">Raça: </label>
-                <input type="text" id="race" name="race"/>
+                        <InputItem>
+                            <LabelTitlePet htmlFor="pelo">Pêlo: </LabelTitlePet>
+                            <Select name="pelo" id="pelo">
+                                <option value="" hidden>--selecionar--</option>
+                                <option value="short">Curto</option>
+                                <option value="soon">Longo</option>
+                            </Select>
+                        </InputItem>
 
-                <label htmlFor="pelo">Pêlo: </label>
-                <select name="pelo" id="pelo">
-                    <option value="" hidden>--selecionar--</option>
-                    <option value="short">Curto</option>
-                    <option value="soon">Longo</option>
-                </select>
+                        <InputItem>
+                            <LabelTitlePet htmlFor="color-animal">Cor: </LabelTitlePet>
+                            <InputAnimal type="text" id="color-animal" name="color-animal"/>
+                        </InputItem>
+                    </FormGroupRow>
+                </FormGroup>
 
-                <label htmlFor="color-animal">Cor: </label>
-                <input type="text" id="color-animal" name="color-animal"/>
+                <FormGroup>
+                    <FormGroupRow>
+                        <InputItem>
+                            <LabelTitlePet htmlFor="sex">Sexo: </LabelTitlePet>
+                            <Select name="sex-animal" id="sex-animal">
+                                <option value="" hidden>--selecionar--</option>
+                                <option value="male">Macho</option>
+                                <option value="female">Fêmea</option>
+                            </Select>
+                        </InputItem>
 
-                <label htmlFor="sex">Sexo: </label>
-                <select name="sex-animal" id="sex-animal">
-                    <option value="" hidden>--selecionar--</option>
-                    <option value="male">Macho</option>
-                    <option value="female">Fêmea</option>
-                </select>
+                        <InputItem>
+                            <LabelTitlePet htmlFor="animal-birth">Nascimento: </LabelTitlePet>
+                            <InputAnimal type="date" id="animal-birth" name="animal-birth"/>
+                        </InputItem>
 
-                <label htmlFor="animal-birth">Nascimento: </label>
-                <input type="date" id="animal-birth" name="animal-birth"/>
+                        <InputItem>
+                            <LabelTitlePet htmlFor="castrated">Castrado: </LabelTitlePet>
+                            <Select name="sex-castrated" id="castrated">
+                                <option value="" hidden>--selecionar--</option>
+                                <option value="yes">Sim</option>
+                                <option value="not">Não</option>
+                            </Select>
+                        </InputItem>
 
-                <label htmlFor="castrated">Castrado: </label>
-                <select name="sex-castrated" id="castrated">
-                    <option value="" hidden>--selecionar--</option>
-                    <option value="yes">Sim</option>
-                    <option value="not">Não</option>
-                </select>
-                
-                <label htmlFor="weight-animal">Peso: </label>
-                <input type="number" id="weight-animal" name="weight-animal"/>
+                        <InputItem>
+                            <LabelTitlePet htmlFor="weight-animal">Peso: </LabelTitlePet>
+                            <InputAnimal type="number" id="weight-animal" name="weight-animal"/>
+                        </InputItem>
 
-                <label htmlFor="restrictions">Restrições: </label>
-                <input type="text" name="restrictions" id="restrictions" />
-
-                <button type="submit">Cadastrar animal</button>
-            </form>
-
-        </div>
+                        <InputItem>
+                            <LabelTitlePet htmlFor="restrictions">Restrições: </LabelTitlePet>
+                            <InputAnimal type="text" name="restrictions" id="restrictions" />
+                        </InputItem>
+                    </FormGroupRow>
+                </FormGroup>
+                <SecundaryButton>Cadastrar animal</SecundaryButton>
+            </FormAnimal>
+        </ContainerAddAnimal>
     )
 }

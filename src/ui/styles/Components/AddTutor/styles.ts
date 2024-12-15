@@ -13,7 +13,7 @@ export const ContainerAddTutor = styled.div`
   border-radius: 1.25rem;
   padding: 2.5rem;
   gap: 2rem;
-  box-shadow: 0px 4px 20px 0px rgba(${({ theme }) => theme.colors.backgrounds.sextinary}, 0.2);
+  box-shadow: 0px 4px 20px 0px rgba(${({ theme }) => theme.colors.backgrounds.sextinary},0 0.2);
 `;
 
 export const TitleAddTutor = styled.h2`
