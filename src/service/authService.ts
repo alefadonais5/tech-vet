@@ -1,5 +1,6 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { auth } from "@/service/firebaseConfig";
+import router from "next/router";
 
 // Registro
 export const registerUser = async (email: string, password: string): Promise<void> => {
@@ -22,6 +23,7 @@ export const loginUser = async (email: string, password: string): Promise<void> 
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email, password);
     console.log("Usuário logado:", userCredential.user);
+    router.push('/');
   } catch (error: unknown) {
     if (error instanceof Error) {
       console.error("Erro ao logar:", error.message);
@@ -38,6 +40,7 @@ export const logoutUser = async (): Promise<void> => {
   try {
     await signOut(auth);
     console.log("Usuário deslogado.");
+    router.push('/entrar');
   } catch (error: unknown) {
     if (error instanceof Error) {
       console.error("Erro ao deslogar:", error.message);

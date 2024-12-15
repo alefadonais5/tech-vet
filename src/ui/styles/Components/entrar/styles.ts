@@ -14,7 +14,12 @@ export const LoginContainer = styled.div`
 export const LeftColumn = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center; /* Centraliza verticalmente */
+  align-items: center; /* Centraliza horizontalmente */
+  text-align: center; /* Alinha o texto ao centro */
   width: 40%;
+  height: 100%;
+  gap: 3.5rem;
 
   p {
     font-size: ${({ theme }) => theme.sizes.font.primary};
@@ -47,11 +52,31 @@ export const FormContainer = styled.div`
   margin-top: 2rem;
 `;
 
+export const TitleLogin = styled.h1`
+  text-align: center;
+  justify-content: center;
+
+`;
+
+export const Subtitle = styled.h4`
+  text-align: center;
+  align-items: center;
+
+`;
+
+export const Paragrafh = styled.p`
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: ${({ theme }) => theme.colors.text.primary};
+`;
+
 export const Title = styled.h2`
   font-size: ${({ theme }) => theme.sizes.font.quaternary};
   color: ${({ theme }) => theme.colors.text.primary};
   font-family: "Kablammo", sans-serif;
 `;
+
+
 
 export const Divider = styled.div`
   color: ${({ theme }) => theme.colors.text.primary};
@@ -66,12 +91,14 @@ export const Input = styled.input`
   border-bottom: 1px solid ${({ theme }) => theme.colors.border.colors.tertiary};
   font-size: 0.75rem;
   background-color: ${({ theme }) => theme.colors.backgrounds.sextinary};
+  margin-bottom: 1rem;
 `;
 
 export const StyledLink = styled(Link)`
   color: #00000080;
   font-size: 0.6875rem;
   text-align: end;
+  margin-top: 0.5rem;
   /* margin-top: 0; */
   /* display: block; */
   text-decoration: none;
@@ -85,8 +112,8 @@ export const StyledLink = styled(Link)`
 export const StyledLink1 = styled(Link)`
   color: ${({ theme }) => theme.colors.text.primary};
   font-size: 0.6875rem;
+  margin-top: 0.5rem; 
   /* text-align: center;
-    margin-top: 1.8125rem; 
     display: flex;
     text-decoration: none;
     padding-top: 1.8125rem;  */
