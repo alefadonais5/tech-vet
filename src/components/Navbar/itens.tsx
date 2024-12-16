@@ -38,18 +38,18 @@ export const itens = [
     id: "5",
     icon: <HospitalIcon />,
     title: "Internamentos",
-    path: "/consultas",
+    path: "/internamentos",
   },
   {
     id: "6",
     icon: <StockIcon />,
     title: "Estoque",
-    path: "/consultas",
+    path: "/estoque",
   },
   {
     id: "7",
     icon: <ForecastIcon />,
     title: "Previsão de estoque",
-    path: "/consultas",
+    path: "/previsao-de-estoque",
   },
 ];
