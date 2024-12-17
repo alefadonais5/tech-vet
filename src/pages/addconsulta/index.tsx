@@ -106,7 +106,7 @@ export default function Vetconsultation({ onCancel }: VetconsultationProps) {
           <FormGroup>
             <Label htmlFor="date">Data:</Label>
             <Input
-              type="date"
+              type="text"
               id="date"
               name="date"
               value={formData.date}
