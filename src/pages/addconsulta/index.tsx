@@ -2,15 +2,18 @@ import React, { useState } from "react";
 import {
   Alert,
   Container,
+  Containerdiv,
   Form,
   FormGroup,
   FormGroupButton,
   Heading,
   Input,
   Label,
-  Select,
+  TitleName,
 } from "@/ui/styles/Components/AddConsulta/styles";
 import { SecondaryButtonStyle } from "@/ui/styles/Components/Elements/Buttons/styles";
+import router from "next/router";
+import { Header } from "@/components/Header";
 
 export type VetconsultationType = {
   animalName: string;
@@ -23,7 +26,7 @@ interface VetconsultationProps {
   onCancel: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-export function Vetconsultation({ onCancel }: VetconsultationProps) {
+export default function Vetconsultation({ onCancel }: VetconsultationProps) {
   const [formData, setFormData] = useState<VetconsultationType>({
     animalName: "",
     date: "",
@@ -72,6 +75,7 @@ export function Vetconsultation({ onCancel }: VetconsultationProps) {
       });
 
       setTimeout(() => setAlertMessage(null), 3000);
+      router.push("/"); // Redirecionando para a página principal após salvar a consulta
 
     } catch (error) {
       console.error("Erro ao salvar consulta no localStorage:", error);
@@ -81,66 +85,66 @@ export function Vetconsultation({ onCancel }: VetconsultationProps) {
   };
 
   return (
-    <Container>
-      <Heading>Criar Consulta</Heading>
-      <Form>
-        <FormGroup>
-          <Label htmlFor="animal-name">Nome do animal:</Label>
-          <Input
-            type="text"
-            id="animal-name"
-            name="animalName"
-            value={formData.animalName}
-            onChange={handleChange}
-            placeholder="digite o nome do animal"
-          />
-        </FormGroup>
+    <Containerdiv>
+    <Header />
+    <TitleName>Consultas</TitleName>
+      <Container>
+        <Heading>Criar Consulta</Heading>
+        <Form>
+          <FormGroup>
+            <Label htmlFor="animal-name">Nome do animal:</Label>
+            <Input
+              type="text"
+              id="animal-name"
+              name="animalName"
+              value={formData.animalName}
+              onChange={handleChange}
+              placeholder="digite o nome do animal"
+              />
+          </FormGroup>
 
-        <FormGroup>
-          <Label htmlFor="date">Data:</Label>
-          <Input
-            type="date"
-            id="date"
-            name="date"
-            value={formData.date}
-            onChange={handleChange}
-          />
-        </FormGroup>
+          <FormGroup>
+            <Label htmlFor="date">Data:</Label>
+            <Input
+              type="date"
+              id="date"
+              name="date"
+              value={formData.date}
+              onChange={handleChange}
+              />
+          </FormGroup>
 
-        <FormGroup>
-          <Label htmlFor="hour">Hora:</Label>
-          <Input
-            type="time"
-            id="hour"
-            name="hour"
-            value={formData.hour}
-            onChange={handleChange}
-          />
-        </FormGroup>
+          <FormGroup>
+            <Label htmlFor="hour">Hora:</Label>
+            <Input
+              type="time"
+              id="hour"
+              name="hour"
+              value={formData.hour}
+              onChange={handleChange}
+            />
+          </FormGroup>
 
-        <FormGroup>
-          <Label htmlFor="description">Descrição:</Label>
-          <Input
-            type="text"
-            id="description"
-            name="description"
-            value={formData.description}
-            onChange={handleChange}
-            placeholder="Descrição da consulta"
-          />
-        </FormGroup>
+          <FormGroup>
+            <Label htmlFor="description">Descrição:</Label>
+            <Input
+              type="text"
+              id="description"
+              name="description"
+              value={formData.description}
+              onChange={handleChange}
+              placeholder="Descrição da consulta"
+              />
+          </FormGroup>
 
-        <FormGroupButton>
-          <SecondaryButtonStyle type="submit" onClick={handleSubmit}>
-            Agendar Consulta
-          </SecondaryButtonStyle>
-
-          {/* Se precisar do botão cancelar, descomente a linha abaixo */}
-          {/* <Cancelar onClick={onCancel}>Cancelar</Cancelar> */}
-        </FormGroupButton>
-      </Form>
-      {alertMessage && <Alert isError={isError}>{alertMessage}</Alert>}
-    </Container>
+          <FormGroupButton>
+            <SecondaryButtonStyle type="submit" onClick={handleSubmit}>
+              Agendar Consulta
+            </SecondaryButtonStyle>
+          </FormGroupButton>
+        </Form>
+        {alertMessage && <Alert isError={isError}>{alertMessage}</Alert>}
+      </Container>
+    </Containerdiv>
   );
 }
-

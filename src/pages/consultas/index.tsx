@@ -12,8 +12,8 @@ import {
 import { SecundaryButton } from "@/components/Elements/Buttons";
 import { useRouter } from "next/router";
 import { useHeader } from "@/contexts/HeaderContext";
-import { Vetconsultation } from "@/components/AddConsulta";
-import { VetconsultationType } from "@/components/AddConsulta/index"; // Certifique-se de que o tipo está sendo exportado corretamente
+import { Vetconsultation } from "@/pages/addconsulta";
+import { VetconsultationType } from "@/pages/addconsulta/index"; // Certifique-se de que o tipo está sendo exportado corretamente
 import { AnimalName, DateTimeGroup, Heade, ImageWrapper, Lista } from "@/ui/styles/Components/consultas/styles";
 import { Header } from "@/components/Header/index";
 

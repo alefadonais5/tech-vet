@@ -1,10 +1,15 @@
 import styled from "styled-components";
 
+export const Containerdiv = styled.div`
+  margin-top: 0; /* Remove qualquer margem superior */
+  padding-top: 0; /* Remove qualquer padding superior */
+`;
+
 export const Container = styled.div`
   width: 100%;
-  max-width: 66.8125rem;
+  max-width: 66rem;
   height: auto;
-  margin: 3rem auto;
+  margin: 2rem auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -135,3 +140,12 @@ export const FormGroupButton = styled.div`
 //   justify-content: center;
 //   align-items: center;
 // `;
+
+export const TitleName = styled.h1`
+    color: ${({ theme }) => theme.colors.text.primary};
+    font-size: ${({ theme }) => theme.sizes.font.terciary};
+    padding-top: 6rem;
+    text-align: center;
+    align-items: center;
+
+`;

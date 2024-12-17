@@ -14,13 +14,10 @@ import {
 } from "@/ui/styles/Pages/home/styles";
 import { SecundaryButton } from "@/components/Elements/Buttons";
 import { useHeader } from "@/contexts/HeaderContext";
-import { Vetconsultation } from "@/components/AddConsulta";
-import { VetconsultationType } from "@/components/AddConsulta/index"; // Certifique-se de que o tipo está sendo exportado corretamente
 import { AnimalName, DateTimeGroup, Heade, ImageWrapper, Lista } from "@/ui/styles/Components/consultas/styles";
 
-
 export default function Home() {
-  const [consultationsVet, setConsultationsVet] = useState<VetconsultationType[] | null>(null);
+  const [consultationsVet, setConsultationsVet] = useState<any[] | null>(null);
   const router = useRouter();
   const navBarIsVisible = useHeader();
   const [isFormVisible, setIsFormVisible] = useState<boolean>(false);
@@ -29,8 +26,8 @@ export default function Home() {
     const storedData = localStorage.getItem("vetConsultations");
     if (storedData) {
       setConsultationsVet(JSON.parse(storedData));
-      }
-    }, []);
+    }
+  }, []);
 
   const handleCreateConsultationClick = () => {
     setIsFormVisible(true);
@@ -59,18 +56,16 @@ export default function Home() {
             <SecundaryButton onClick={() => router.push("historico")}>
               Histórico
             </SecundaryButton>
-            <SecundaryButton onClick={handleCreateConsultationClick}>
+            <SecundaryButton onClick={() => router.push("addconsulta")}>
               Criar Consulta
             </SecundaryButton>
           </div>
         </ButtonContainer>
-      ) : (
-        <Vetconsultation onCancel={handleCancelForm} />
-      )}
+      ) : null} {/* Removi o Vetconsultation aqui */}
 
-      {!isFormVisible && (
+      {!isFormVisible && consultationsVet && (
         <GroupCards>
-          {consultationsVet?.map((consultation, index) => (
+          {consultationsVet.map((consultation, index) => (
             <Lista key={index}>
               <Heade>
                 <ImageWrapper>
@@ -107,4 +102,3 @@ export default function Home() {
     </Container>
   );
 }
-

@@ -14,7 +14,7 @@ export const itens = [
     id: "1",
     icon: <ServiceIcon />,
     title: "Consultas",
-    path: "/consultas",
+    path: "/",
   },
   {
     id: "2",
