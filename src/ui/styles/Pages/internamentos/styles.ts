@@ -51,8 +51,7 @@ export const GroupCards = styled.div`
 `;
 
 
-export const ContainerDiv = styled.div`
+export const ContainerDiv = styled.div<{ navBarVisible?: boolean }>`
   justify-content: flex-start;
   text-align: center;
-
 `;

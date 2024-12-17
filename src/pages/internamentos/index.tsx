@@ -1,33 +1,37 @@
-import React from "react";
+// InternamentoList.tsx
+import React, { useState } from "react";
 import { ContainerDiv, GroupCards, Title } from "@/ui/styles/Pages/internamentos/styles";
-import { InternamentoCard } from "@/components/Card/Internamentos/index"; // Certifique-se de que este seja o componente adequado para internamentos
-import internamentos  from "@/service/mocks/cardInternamentos"; // Caminho para o mock de internamentos
-import imgExample from "@/ui/assets/images/Logo.svg"; // Imagem padrão
+import { InternamentoCard } from "@/components/Card/Internamentos/index"; 
+import internamentos from "@/service/mocks/cardInternamentos"; 
+import imgExample from "@/ui/assets/images/Logo.svg"; 
 import { Header } from "@/components/Header/index";
 
 export default function InternamentoList () {
+  const [navBarVisible, setNavBarVisible] = useState(true);
+
   return (
-    <ContainerDiv>
-    <Header />
+    <ContainerDiv navBarVisible={navBarVisible}>
+      <Header />
       <Title>Internamentos Atuais</Title>
-        <GroupCards>
-          {internamentos.map((internamento) => (
-            <InternamentoCard
+      <GroupCards>
+        {internamentos.map((internamento) => (
+          <InternamentoCard
             key={internamento.id}
-            image={imgExample.src} // Usando imagem padrão se não houver imagem no mock
+            image={imgExample.src}
             animalName={internamento.nomeAnimal}
             tutorName={internamento.nomeTutor}
             admissionDate={internamento.dataInternamento}
             dischargeDate={internamento.dataAlta}
-            reason={internamento.motivo} // Corrigido para 'motivo'
-            healthStatus={internamento.estadoSaude} // Corrigido para 'estadoSaude'
-            notes={internamento.observacoes} // Corrigido para 'observacoes'
-            />
-          ))}
-        </GroupCards>
+            reason={internamento.motivo}
+            healthStatus={internamento.estadoSaude}
+            notes={internamento.observacoes}
+          />
+        ))}
+      </GroupCards>
     </ContainerDiv>
   );
 };
+
 
 
 
