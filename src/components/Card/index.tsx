@@ -44,7 +44,7 @@ export const Card: React.FC<CardProps> = ({
         <div>horário: {hour}</div>
       </DateTimeGroup>
 
-      <div>descrição: {description}</div>
+      <div>Descrição: {description}</div>
 
       <SecundaryButton>Ver mais</SecundaryButton>
     </Container>

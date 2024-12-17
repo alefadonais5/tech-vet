@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   Alert,
   Container,
@@ -12,12 +12,11 @@ import {
 } from "@/ui/styles/Components/AddConsulta/styles";
 import { SecondaryButtonStyle } from "@/ui/styles/Components/Elements/Buttons/styles";
 
-type VetconsultationType = {
-  tutorName: string;
+export type VetconsultationType = {
   animalName: string;
-  animalAge: number;
-  consultation: string;
-  priority: string;
+  date: string;
+  hour: string;
+  description: string;
 };
 
 interface VetconsultationProps {
@@ -26,11 +25,10 @@ interface VetconsultationProps {
 
 export function Vetconsultation({ onCancel }: VetconsultationProps) {
   const [formData, setFormData] = useState<VetconsultationType>({
-    tutorName: "",
     animalName: "",
-    animalAge: 0,
-    consultation: "checkup",
-    priority: "low",
+    date: "",
+    hour: "",
+    description: "",
   });
   const [alertMessage, setAlertMessage] = useState<string | null>(null);
   const [isError, setError] = useState<boolean>(false);
@@ -48,11 +46,7 @@ export function Vetconsultation({ onCancel }: VetconsultationProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (
-      !formData.tutorName ||
-      !formData.animalName ||
-      formData.animalAge <= 0
-    ) {
+    if (!formData.animalName || !formData.date || !formData.hour || !formData.description) {
       setAlertMessage("Todos os campos devem ser preenchidos corretamente!");
       setError(true);
       setTimeout(() => setAlertMessage(null), 3000);
@@ -71,16 +65,14 @@ export function Vetconsultation({ onCancel }: VetconsultationProps) {
       setError(false);
 
       setFormData({
-        tutorName: "",
         animalName: "",
-        animalAge: 0,
-        consultation: "checkup",
-        priority: "low",
+        date: "",
+        hour: "",
+        description: "",
       });
 
       setTimeout(() => setAlertMessage(null), 3000);
 
-      // setLoading(false);
     } catch (error) {
       console.error("Erro ao salvar consulta no localStorage:", error);
       setAlertMessage("Erro ao salvar consulta.");
@@ -88,31 +80,10 @@ export function Vetconsultation({ onCancel }: VetconsultationProps) {
     }
   };
 
-  useEffect(() => {
-    const storedData = localStorage.getItem("vetConsultations");
-    if (storedData) {
-      console.log("Consultas Salvas:", JSON.parse(storedData));
-    } else {
-      console.log("Nenhuma consulta salva.");
-    }
-  }, []);
-
   return (
-  
     <Container>
       <Heading>Criar Consulta</Heading>
       <Form>
-        <FormGroup>
-          <Label htmlFor="tutor-name">Nome do tutor: </Label>
-          <Input
-            type="text"
-            id="tutor-name"
-            name="tutorName"
-            value={formData.tutorName}
-            onChange={handleChange}
-            placeholder="digite o nome do tutor"
-          />
-        </FormGroup>
         <FormGroup>
           <Label htmlFor="animal-name">Nome do animal:</Label>
           <Input
@@ -124,60 +95,52 @@ export function Vetconsultation({ onCancel }: VetconsultationProps) {
             placeholder="digite o nome do animal"
           />
         </FormGroup>
+
         <FormGroup>
-          <Label htmlFor="animal-age">Idade (Animal):</Label>
+          <Label htmlFor="date">Data:</Label>
           <Input
-            type="number"
-            id="animal-age"
-            name="animalAge"
-            value={formData.animalAge}
+            type="date"
+            id="date"
+            name="date"
+            value={formData.date}
             onChange={handleChange}
-            placeholder="digite a idade do animal"
           />
         </FormGroup>
-        <FormGroup>
-          <Label htmlFor="consultation">Consulta Desejada:</Label>
-          <Select
-            name="consultation"
-            id="consultation"
-            value={formData.consultation}
-            onChange={handleChange}
-            required
-          >
-            <option value="" disabled hidden>
-              Seleciona
-            </option>
-            <option value="checkup">Check-up</option>
-            <option value="vaccination">Vacinação</option>
-            <option value="surgery">Cirurgia</option>
-            <option value="routine">Rotina</option>
-          </Select>
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor="priority">Prioridade:</Label>
-          <Select
-            id="priority"
-            name="priority"
-            value={formData.priority}
-            onChange={handleChange}
-          >
-            <option value="low">Baixa</option>
-            <option value="medium">Média</option>
-            <option value="high">Alta</option>
-          </Select>
-        </FormGroup>
-        <FormGroupButton>
 
+        <FormGroup>
+          <Label htmlFor="hour">Hora:</Label>
+          <Input
+            type="time"
+            id="hour"
+            name="hour"
+            value={formData.hour}
+            onChange={handleChange}
+          />
+        </FormGroup>
+
+        <FormGroup>
+          <Label htmlFor="description">Descrição:</Label>
+          <Input
+            type="text"
+            id="description"
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            placeholder="Descrição da consulta"
+          />
+        </FormGroup>
+
+        <FormGroupButton>
           <SecondaryButtonStyle type="submit" onClick={handleSubmit}>
             Agendar Consulta
           </SecondaryButtonStyle>
 
-          {/* <Cancelar onClick={onCancel}>
-            Cancelar
-          </Cancelar> */}
+          {/* Se precisar do botão cancelar, descomente a linha abaixo */}
+          {/* <Cancelar onClick={onCancel}>Cancelar</Cancelar> */}
         </FormGroupButton>
       </Form>
       {alertMessage && <Alert isError={isError}>{alertMessage}</Alert>}
     </Container>
   );
 }
+

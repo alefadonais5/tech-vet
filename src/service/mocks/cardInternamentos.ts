@@ -1,49 +1,74 @@
-const internamentosMock = [
-    {
-    id: 1,
-    animalType: "Cachorro",
-    animalName: "Rex",
-    tutorName: "João Silva",
-    animalAge: 5,
-    condition: "Fratura no fêmur",
-    admissionDate: "2024-12-10",
-    dischargeDate: "2024-12-20",
-    status: "Em tratamento",
-    },
-    {
-    id: 2,
-    animalType: "Cachorro",
-    animalName: "Bella",
-    tutorName: "Maria Oliveira",
-    animalAge: 3,
-    condition: "Intoxicação alimentar",
-    admissionDate: "2024-12-12",
-    dischargeDate: "2024-12-18",
-    status: "Em observação",
-    },
-    {
-    id: 3,
-    animalType: "Gato",
-    animalName: "Mimi",
-    tutorName: "Carlos Pereira",
-    animalAge: 7,
-    condition: "Doença renal crônica",
-    admissionDate: "2024-12-05",
-    dischargeDate: "2024-12-15",
-    status: "Alta prevista",
-    },
-    {
-    id: 4,
-    animalType: "Gato",
-    animalName: "Felix",
-    tutorName: "Ana Costa",
-    animalAge: 2,
-    ondition: "Infecção respiratória",
-    admissionDate: "2024-12-07",
-    dischargeDate: "2024-12-14",
-    status: "Recuperação",
-    },
-];
+type Internamento = {
+    id: number;
+    nomeAnimal: string;
+    nomeTutor: string;
+    dataInternamento: string;
+    dataAlta?: string; // Caso o animal já tenha alta
+    motivo: string;
+    estadoSaude: "crítico" | "grave" | "estável" | "recuperado";
+    observacoes: string;
+  };
   
-export default internamentosMock;
+  export const internamentos: Internamento[] = [
+    {
+      id: 1,
+      nomeAnimal: "Bella",
+      nomeTutor: "Lucas Silva",
+      dataInternamento: "01/12/2024", // Data no formato brasileiro
+      dataAlta: "10/12/2024",
+      motivo: "Cirurgia ortopédica devido a fratura",
+      estadoSaude: "estável",
+      observacoes: "Recuperação bem-sucedida, seguirá acompanhamento fisioterápico.",
+    },
+    {
+      id: 2,
+      nomeAnimal: "Max",
+      nomeTutor: "Carla Souza",
+      dataInternamento: "03/12/2024",
+      motivo: "Tratamento de intoxicação alimentar",
+      estadoSaude: "grave",
+      observacoes: "Animal está em observação, aguarda melhoria para liberação.",
+    },
+    {
+      id: 3,
+      nomeAnimal: "Luna",
+      nomeTutor: "Júlia Oliveira",
+      dataInternamento: "05/12/2024",
+      dataAlta: "07/12/2024",
+      motivo: "Infecção urinária grave",
+      estadoSaude: "recuperado",
+      observacoes: "Alta dada com sucesso, recomenda-se tratamento preventivo.",
+    },
+    {
+      id: 4,
+      nomeAnimal: "Thor",
+      nomeTutor: "Ricardo Lima",
+      dataInternamento: "10/12/2024",
+      motivo: "Monitoramento pós-operatório de cirurgia abdominal",
+      estadoSaude: "crítico",
+      observacoes: "Estado crítico, requer cuidados intensivos.",
+    },
+    {
+      id: 5,
+      nomeAnimal: "Mel",
+      nomeTutor: "Amanda Costa",
+      dataInternamento: "12/12/2024",
+      dataAlta: "14/12/2024",
+      motivo: "Acidente de carro - Fraturas múltiplas",
+      estadoSaude: "grave",
+      observacoes: "Passou por cirurgia, estável, mas com recuperação prolongada.",
+    },
+    {
+      id: 6,
+      nomeAnimal: "Rocky",
+      nomeTutor: "José Pereira",
+      dataInternamento: "14/12/2024",
+      motivo: "Acompanhamento pós-traumático de lesão muscular",
+      estadoSaude: "estável",
+      observacoes: "Já está em recuperação, mas necessita de mais tempo de internação.",
+    },
+  ];
+  
+  export default internamentos;
+  
   

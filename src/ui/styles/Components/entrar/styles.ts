@@ -123,7 +123,7 @@ export const StyledLink1 = styled(Link)`
   }
 `;
 
-export const FooterText = styled.p`
+export const FooterText = styled.div`
   display: flex;
   flex-direction: column;
   /* font-family: "Magra", sans-serif;

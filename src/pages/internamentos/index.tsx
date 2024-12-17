@@ -1,79 +1,33 @@
-import React, { useState } from "react";
+import React from "react";
+import { ContainerDiv, GroupCards, Title } from "@/ui/styles/Pages/home/styles";
+import { InternamentoCard } from "@/components/Card/Internamentos/index"; // Certifique-se de que este seja o componente adequado para internamentos
+import internamentos  from "@/service/mocks/cardInternamentos"; // Caminho para o mock de internamentos
+import imgExample from "@/ui/assets/images/Logo.svg"; // Imagem padrão
+import { Header } from "@/components/Header/index";
 
-import SEO from "@/components/SEO";
-import { HomePageTextsSEO } from "@/components/SEO/seoTexts";
-import { Card } from "@/components/Card";
-import imgExample from "@/ui/assets/images/Logo.svg";
-import cardItems from "@/service/mocks/cardItens";
-import {
-  Container,
-  Title,
-  ButtonContainer,
-  GroupCards,
-} from "@/ui/styles/Pages/home/styles";
-import { SecundaryButton } from "@/components/Elements/Buttons";
-import { useRouter } from "next/router";
-import { useHeader } from "@/contexts/HeaderContext";
-import { Vetconsultation } from "@/components/AddConsulta";
-import { Header } from "@/components/Header";
-
-export default function Hospitalization() {
-  const router = useRouter();
-  const navBarIsVisible = useHeader();
-  const [isFormVisible, setIsFormVisible] = useState<boolean>(false);
-
-  const handleCreateConsultationClick = () => {
-    setIsFormVisible(true);
-  };
-
-  const handleCancelForm = () => {
-    setIsFormVisible(false);
-  };
-
+export default function InternamentoList () {
   return (
-    // <Header />
-    <Container>
-      <SEO
-        title={HomePageTextsSEO.title}
-        description={HomePageTextsSEO.description}
-        keywords={HomePageTextsSEO.keywords}
-        author={HomePageTextsSEO.author}
-        url={HomePageTextsSEO.url}
-        image={HomePageTextsSEO.image}
-      />
-
-      {!isFormVisible ? (
-        <ButtonContainer navBarVisible={navBarIsVisible.isNavbarVisible}>
-          <Title>Internamentos</Title>
-
-          <div>
-            <SecundaryButton onClick={() => router.push("historico")}>
-              Histórico
-            </SecundaryButton>
-            <SecundaryButton onClick={handleCreateConsultationClick}>
-              Criar Consulta
-            </SecundaryButton>
-          </div>
-        </ButtonContainer>
-      ) : (
-        <Vetconsultation onCancel={handleCancelForm} />
-      )}
-
-      {!isFormVisible && (
+    <ContainerDiv>
+    <Header />
+      <Title>Internamentos Atuais</Title>
         <GroupCards>
-          {cardItems.map((card) => (
-            <Card
-              key={card.id}
-              image={card.imageUrl || imgExample.src}
-              animalName={card.animalName}
-              date={card.date}
-              hour={card.hour}
-              description={card.description}
+          {internamentos.map((internamento) => (
+            <InternamentoCard
+            key={internamento.id}
+            image={imgExample.src} // Usando imagem padrão se não houver imagem no mock
+            animalName={internamento.nomeAnimal}
+            tutorName={internamento.nomeTutor}
+            admissionDate={internamento.dataInternamento}
+            dischargeDate={internamento.dataAlta}
+            reason={internamento.motivo} // Corrigido para 'motivo'
+            healthStatus={internamento.estadoSaude} // Corrigido para 'estadoSaude'
+            notes={internamento.observacoes} // Corrigido para 'observacoes'
             />
           ))}
         </GroupCards>
-      )}
-    </Container>
+    </ContainerDiv>
   );
-}
+};
+
+
 

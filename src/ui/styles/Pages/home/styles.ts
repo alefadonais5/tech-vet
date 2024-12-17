@@ -32,6 +32,11 @@ export const ButtonContainer = styled.div<{ navBarVisible?: boolean }>`
 export const Title = styled.h1`
   font-size: 2rem;
   font-weight: bold;
+  padding-top: 6rem;
+  padding-bottom: 2rem;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
   color: ${({ theme }) => theme.colors.text.primary};
 `;
 
@@ -41,4 +46,17 @@ export const GroupCards = styled.div`
   justify-content: center;
   gap: 1rem;
   padding: 0 8rem;
+`;
+
+
+export const Div = styled.div`
+  -top: 5rem;
+
+`;
+
+
+export const ContainerDiv = styled.div`
+  justify-content: center;
+  text-align: center;
+
 `;

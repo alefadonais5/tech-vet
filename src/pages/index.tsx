@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { GetServerSideProps } from "next";
-import nookies from "nookies";
+import React, { useEffect, useState } from "react";
+import Image from "next/image";
+import { useRouter } from "next/router";
 import SEO from "@/components/SEO";
 import { HomePageTextsSEO } from "@/components/SEO/seoTexts";
 import { Card } from "@/components/Card";
@@ -13,14 +13,29 @@ import {
   GroupCards,
 } from "@/ui/styles/Pages/home/styles";
 import { SecundaryButton } from "@/components/Elements/Buttons";
-import { useRouter } from "next/router";
 import { useHeader } from "@/contexts/HeaderContext";
 import { Vetconsultation } from "@/components/AddConsulta";
+import { VetconsultationType } from "@/components/AddConsulta/index"; // Certifique-se de que o tipo está sendo exportado corretamente
+import { AnimalName, DateTimeGroup, Heade, ImageWrapper, Lista } from "@/ui/styles/Components/consultas/styles";
+
 
 export default function Home() {
+  const [consultationsVet, setConsultationsVet] = useState<VetconsultationType[] | null>(null);
   const router = useRouter();
   const navBarIsVisible = useHeader();
   const [isFormVisible, setIsFormVisible] = useState<boolean>(false);
+
+  useEffect(() => {
+    // Verifica se há dados no localStorage
+    const storedData = localStorage.getItem("vetConsultations");
+    if (!storedData) {
+      // Redireciona para a página de login se não houver dados
+      router.push("/entrar");  // Substitua "/login" pela sua página de login
+    } else {
+      // Se houver dados, armazena os dados de consulta no estado
+      setConsultationsVet(JSON.parse(storedData));
+    }
+  }, [router]);
 
   const handleCreateConsultationClick = () => {
     setIsFormVisible(true);
@@ -60,6 +75,28 @@ export default function Home() {
 
       {!isFormVisible && (
         <GroupCards>
+          {consultationsVet?.map((consultation, index) => (
+            <Lista key={index}>
+              <Heade>
+                <ImageWrapper>
+                  <Image
+                    src={imgExample} // Usando a imagem da consulta ou a padrão
+                    alt={consultation.animalName}
+                    width={48}
+                    height={48}
+                    objectFit="cover"
+                  />
+                </ImageWrapper>
+                <AnimalName>{consultation.animalName}</AnimalName>
+              </Heade>
+              <DateTimeGroup>
+                <p>Data: {consultation.date}</p>
+                <p>Hora: {consultation.hour}</p>
+              </DateTimeGroup>
+              <p>Descrição: {consultation.description}</p>
+              <SecundaryButton>Ver mais</SecundaryButton>
+            </Lista>
+          ))}
           {cardItems.map((card) => (
             <Card
               key={card.id}
@@ -75,3 +112,4 @@ export default function Home() {
     </Container>
   );
 }
+
