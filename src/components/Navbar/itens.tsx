@@ -46,10 +46,10 @@ export const itens = [
     title: "Estoque",
     path: "/estoque",
   },
-  {
-    id: "7",
-    icon: <ForecastIcon />,
-    title: "Previsão de estoque",
-    path: "/previsao-de-estoque",
-  },
+  // {
+  //   id: "7",
+  //   icon: <ForecastIcon />,
+  //   title: "Previsão de estoque",
+  //   path: "/previsao-de-estoque",
+  // },
 ];

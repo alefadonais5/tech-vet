@@ -6,7 +6,7 @@ import cardItems from "@/service/mocks/cardItens";
 import {
   Container,
   Title,
-  ButtonContainer,
+  ButtonContainer,  
   GroupCards,
 } from "@/ui/styles/Pages/home/styles";
 import { SecundaryButton } from "@/components/Elements/Buttons";
@@ -42,7 +42,7 @@ export default function VetQueries() {
 
   return (
     <Container>
-  
+    <Heade />
       {!isFormVisible ? (
         <ButtonContainer navBarVisible={navBarIsVisible.isNavbarVisible}>
           <Title>Consultas</Title>

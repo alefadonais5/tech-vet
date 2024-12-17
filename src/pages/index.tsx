@@ -25,6 +25,12 @@ export default function Home() {
   const navBarIsVisible = useHeader();
   const [isFormVisible, setIsFormVisible] = useState<boolean>(false);
 
+  useEffect(() => {
+    const storedData = localStorage.getItem("vetConsultations");
+    if (storedData) {
+      setConsultationsVet(JSON.parse(storedData));
+      }
+    }, []);
 
   const handleCreateConsultationClick = () => {
     setIsFormVisible(true);

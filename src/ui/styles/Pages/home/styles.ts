@@ -32,7 +32,7 @@ export const ButtonContainer = styled.div<{ navBarVisible?: boolean }>`
 export const Title = styled.h1`
   font-size: 2rem;
   font-weight: bold;
-  padding-top: 6rem;
+  padding-top: 2rem;
   padding-bottom: 2rem;
   gap: 1rem;
   align-items: center;
