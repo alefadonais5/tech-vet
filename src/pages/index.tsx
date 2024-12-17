@@ -25,17 +25,6 @@ export default function Home() {
   const navBarIsVisible = useHeader();
   const [isFormVisible, setIsFormVisible] = useState<boolean>(false);
 
-  useEffect(() => {
-    // Verifica se há dados no localStorage
-    const storedData = localStorage.getItem("vetConsultations");
-    if (!storedData) {
-      // Redireciona para a página de login se não houver dados
-      router.push("/entrar");  // Substitua "/login" pela sua página de login
-    } else {
-      // Se houver dados, armazena os dados de consulta no estado
-      setConsultationsVet(JSON.parse(storedData));
-    }
-  }, [router]);
 
   const handleCreateConsultationClick = () => {
     setIsFormVisible(true);
