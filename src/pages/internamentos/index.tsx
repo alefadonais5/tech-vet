@@ -1,5 +1,5 @@
 import React from "react";
-import { ContainerDiv, GroupCards, Title } from "@/ui/styles/Pages/home/styles";
+import { ContainerDiv, GroupCards, Title } from "@/ui/styles/Pages/internamentos/styles";
 import { InternamentoCard } from "@/components/Card/Internamentos/index"; // Certifique-se de que este seja o componente adequado para internamentos
 import internamentos  from "@/service/mocks/cardInternamentos"; // Caminho para o mock de internamentos
 import imgExample from "@/ui/assets/images/Logo.svg"; // Imagem padrão

@@ -14,6 +14,7 @@ export const Container = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
+  
   width: 3rem;
   height: 3rem;
   border-radius: 50%;

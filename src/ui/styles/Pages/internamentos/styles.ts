@@ -4,13 +4,15 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+  min-height: 100vh;
   padding-top: 5rem;
   background-color: ${({ theme }) => theme.colors.backgrounds.quinary};
   color: ${({ theme }) => theme.colors.text.primary};
+  
 `;
 
 export const ButtonContainer = styled.div<{ navBarVisible?: boolean }>`
@@ -50,7 +52,7 @@ export const GroupCards = styled.div`
 
 
 export const ContainerDiv = styled.div`
-  justify-content: center;
+  justify-content: flex-start;
   text-align: center;
 
 `;
